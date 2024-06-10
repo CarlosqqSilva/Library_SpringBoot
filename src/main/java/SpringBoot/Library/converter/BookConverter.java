@@ -12,7 +12,14 @@ public class BookConverter {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getNumberOfPages());
+    }
 
+    public static BookPostDto fromModelToBookPostDto(Book book) {
+        return new BookPostDto(
+
+                book.getTitle(),
+                book.getAuthor(),
+                book.getNumberOfPages());
     }
 
 

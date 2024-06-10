@@ -31,8 +31,8 @@ public class BookServiceImpl implements BookService {
         return BookConverter.fromModelToBookDto(bookRepository.findById(id).orElseThrow());
     }
 
-    public BookGetDto saveBook(BookPostDto bookPostDto) {
-        return BookConverter.fromModelToBookDto(bookRepository.save(BookConverter.fromBookDtoToModel(bookPostDto)));
+    public BookPostDto saveBook(BookPostDto bookPostDto) {
+        return BookConverter.fromModelToBookPostDto(bookRepository.save(BookConverter.fromBookDtoToModel(bookPostDto)));
     }
 
     public void deleteBookById(Long id) {

@@ -12,6 +12,11 @@ public class UserConverter {
                 user.getName());
     }
 
+    public static UserPostDto fromModelToUserPostDto(User user) {
+        return new UserPostDto(
+                user.getName());
+    }
+
     public static User fromUserDtoToModel(UserPostDto userPostDto) {
         return User.builder()
                 .name(userPostDto.name())

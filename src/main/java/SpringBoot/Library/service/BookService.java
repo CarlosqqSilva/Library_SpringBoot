@@ -1,6 +1,7 @@
 package SpringBoot.Library.service;
 
 import SpringBoot.Library.dto.BookGetDto;
+import SpringBoot.Library.dto.BookPostDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface BookService {
 
     BookGetDto getBookById(Long id);
 
-    BookGetDto saveBook(BookGetDto bookGetDto);
+    BookPostDto saveBook(BookPostDto bookPostDto);
 
     void deleteBookById(Long id);
 }

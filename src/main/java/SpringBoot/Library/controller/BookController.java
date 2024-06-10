@@ -1,10 +1,12 @@
 package SpringBoot.Library.controller;
 
 import SpringBoot.Library.dto.BookGetDto;
+import SpringBoot.Library.dto.BookPostDto;
 import SpringBoot.Library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +28,18 @@ public class BookController {
         return ResponseEntity.ok(bookService.getAllBooks());
     }
 
-    
+    @GetMapping("/{id}")
+    public ResponseEntity<BookGetDto> getBookById(Long id) {
+        return ResponseEntity.ok(bookService.getBookById(id));
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<BookPostDto> saveBook(BookPostDto bookPostDto) {
+        return ResponseEntity.ok(bookService.saveBook(bookPostDto));
+    }
+
+    @GetMapping("/{id}")
+    public void deleteBookById(Long id) {
+        bookService.deleteBookById(id);
+    }
 }
