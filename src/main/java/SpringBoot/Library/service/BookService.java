@@ -1,4 +1,12 @@
 package SpringBoot.Library.service;
 
-public class BookService {
+import SpringBoot.Library.dto.BookGetDto;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public interface BookService {
+
+    List<BookGetDto> getAllBooks();
 }
