@@ -12,20 +12,28 @@ public class BookConverter {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getNumberOfPages());
-
     }
 
-    ;
+    public static BookPostDto fromModelToBookPostDto(Book book) {
+        return new BookPostDto(
+
+                book.getTitle(),
+                book.getAuthor(),
+                book.getNumberOfPages());
+    }
+
 
     public static Book fromBookDtoToModel(BookPostDto bookPostDto) {
+        Double numberOfPages = bookPostDto.numberOfPages();
+        if (numberOfPages == null) {
+            throw new IllegalArgumentException("Number of pages cannot be null");
+        }
         return Book.builder()
                 .title(bookPostDto.title())
                 .author(bookPostDto.author())
                 .numberOfPages(bookPostDto.numberOfPages())
                 .build();
     }
-
-    ;
 
     public static Book fromBookGetDtoToModel(BookGetDto bookGetDto) {
         return Book.builder()
@@ -34,7 +42,5 @@ public class BookConverter {
                 .numberOfPages(bookGetDto.numberOfPages())
                 .build();
     }
-
-    ;
 
 }
