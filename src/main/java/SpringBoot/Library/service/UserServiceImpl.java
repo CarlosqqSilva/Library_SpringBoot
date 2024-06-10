@@ -1,10 +1,14 @@
 package SpringBoot.Library.service;
 
+import SpringBoot.Library.converter.UserConverter;
+import SpringBoot.Library.dto.UserGetDto;
 import SpringBoot.Library.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 

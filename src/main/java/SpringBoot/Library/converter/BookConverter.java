@@ -15,7 +15,6 @@ public class BookConverter {
 
     }
 
-    ;
 
     public static Book fromBookDtoToModel(BookPostDto bookPostDto) {
         return Book.builder()
@@ -25,8 +24,6 @@ public class BookConverter {
                 .build();
     }
 
-    ;
-
     public static Book fromBookGetDtoToModel(BookGetDto bookGetDto) {
         return Book.builder()
                 .title(bookGetDto.title())
@@ -34,7 +31,5 @@ public class BookConverter {
                 .numberOfPages(bookGetDto.numberOfPages())
                 .build();
     }
-
-    ;
 
 }

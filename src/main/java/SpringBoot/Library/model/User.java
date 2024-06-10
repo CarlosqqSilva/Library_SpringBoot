@@ -1,17 +1,17 @@
 package SpringBoot.Library.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "users")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class User {
 
     @Id
