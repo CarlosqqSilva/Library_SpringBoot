@@ -9,4 +9,10 @@ import java.util.List;
 public interface BookService {
 
     List<BookGetDto> getAllBooks();
+
+    BookGetDto getBookById(Long id);
+
+    BookGetDto saveBook(BookGetDto bookGetDto);
+
+    void deleteBookById(Long id);
 }
