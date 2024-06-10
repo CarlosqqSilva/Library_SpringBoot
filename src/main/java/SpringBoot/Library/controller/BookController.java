@@ -26,17 +26,17 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BookGetDto> getBookById(Long id) {
+    public ResponseEntity<BookGetDto> getBookById(@PathVariable Long id) {
         return ResponseEntity.ok(bookService.getBookById(id));
     }
 
     @PostMapping("/")
-    public ResponseEntity<BookPostDto> saveBook(BookPostDto bookPostDto) {
+    public ResponseEntity<BookPostDto> saveBook(@RequestBody BookPostDto bookPostDto) {
         return ResponseEntity.ok(bookService.saveBook(bookPostDto));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBookById(Long id) {
+    public void deleteBookById(@PathVariable Long id) {
         bookService.deleteBookById(id);
     }
 }

@@ -25,18 +25,18 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @PostMapping("/")
-    public ResponseEntity<UserGetDto> saveUser(UserPostDto userPostDto) {
-        return ResponseEntity.ok(userService.saveUser(userPostDto));
-    }
-
     @GetMapping("/{id}")
-    public ResponseEntity<UserGetDto> getUserById(Long id) {
+    public ResponseEntity<UserGetDto> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    @PostMapping("/")
+    public ResponseEntity<UserPostDto> saveUser(@RequestBody UserPostDto userPostDto) {
+        return ResponseEntity.ok(userService.saveUser(userPostDto));
+    }
+
     @DeleteMapping("/{id}")
-    public void deleteUserById(Long id) {
+    public void deleteUserById(@PathVariable Long id) {
         userService.deleteUserById(id);
     }
 }

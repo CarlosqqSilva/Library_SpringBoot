@@ -24,6 +24,10 @@ public class BookConverter {
 
 
     public static Book fromBookDtoToModel(BookPostDto bookPostDto) {
+        Double numberOfPages = bookPostDto.numberOfPages();
+        if (numberOfPages == null) {
+            throw new IllegalArgumentException("Number of pages cannot be null");
+        }
         return Book.builder()
                 .title(bookPostDto.title())
                 .author(bookPostDto.author())

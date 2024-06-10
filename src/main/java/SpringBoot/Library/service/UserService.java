@@ -13,7 +13,7 @@ public interface UserService {
 
     UserGetDto getUserById(Long id);
 
-    UserGetDto saveUser(UserPostDto userPostDto);
+    UserPostDto saveUser(UserPostDto userPostDto);
 
     void deleteUserById(Long id);
 }

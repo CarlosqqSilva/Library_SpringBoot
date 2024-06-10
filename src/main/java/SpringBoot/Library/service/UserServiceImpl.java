@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
         return UserConverter.fromModelToUserDto(userRepository.findById(id).orElseThrow());
     }
 
-    public UserGetDto saveUser(UserPostDto userPostDto) {
-        return UserConverter.fromModelToUserDto(userRepository.save(UserConverter.fromUserDtoToModel(userPostDto)));
+    public UserPostDto saveUser(UserPostDto userPostDto) {
+        return UserConverter.fromModelToUserPostDto(userRepository.save(UserConverter.fromUserDtoToModel(userPostDto)));
     }
 
     public void deleteUserById(Long id) {
