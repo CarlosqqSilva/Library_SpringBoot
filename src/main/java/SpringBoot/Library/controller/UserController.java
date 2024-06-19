@@ -1,7 +1,7 @@
 package SpringBoot.Library.controller;
 
-import SpringBoot.Library.dto.UserGetDto;
-import SpringBoot.Library.dto.UserPostDto;
+import SpringBoot.Library.dto.user.UserGetDto;
+import SpringBoot.Library.dto.user.UserPostDto;
 import SpringBoot.Library.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

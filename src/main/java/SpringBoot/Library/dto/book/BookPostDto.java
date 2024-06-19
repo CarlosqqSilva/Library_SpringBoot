@@ -1,4 +1,4 @@
-package SpringBoot.Library.dto;
+package SpringBoot.Library.dto.book;
 
 import java.io.Serializable;
 

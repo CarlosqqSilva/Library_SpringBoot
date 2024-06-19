@@ -1,7 +1,7 @@
 package SpringBoot.Library.controller;
 
-import SpringBoot.Library.dto.BookGetDto;
-import SpringBoot.Library.dto.BookPostDto;
+import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPostDto;
 import SpringBoot.Library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

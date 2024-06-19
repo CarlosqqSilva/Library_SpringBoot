@@ -1,7 +1,7 @@
 package SpringBoot.Library.service;
 
-import SpringBoot.Library.dto.BookGetDto;
-import SpringBoot.Library.dto.BookPostDto;
+import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPostDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

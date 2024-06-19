@@ -1,8 +1,8 @@
 package SpringBoot.Library.service;
 
 import SpringBoot.Library.converter.BookConverter;
-import SpringBoot.Library.dto.BookGetDto;
-import SpringBoot.Library.dto.BookPostDto;
+import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPostDto;
 import SpringBoot.Library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
