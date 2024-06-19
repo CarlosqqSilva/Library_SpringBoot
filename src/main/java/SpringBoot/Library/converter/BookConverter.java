@@ -1,7 +1,7 @@
 package SpringBoot.Library.converter;
 
-import SpringBoot.Library.dto.BookGetDto;
-import SpringBoot.Library.dto.BookPostDto;
+import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPostDto;
 import SpringBoot.Library.model.Book;
 
 public class BookConverter {

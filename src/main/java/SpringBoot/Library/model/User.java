@@ -19,5 +19,8 @@ public class User {
     private Long id;
 
     @NotBlank(message = "Must have a name")
-    private String name;
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String email;
 }
