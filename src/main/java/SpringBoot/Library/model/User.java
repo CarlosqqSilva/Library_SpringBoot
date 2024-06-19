@@ -20,4 +20,7 @@ public class User {
 
     @NotBlank(message = "Must have a name")
     private String userName;
+    private String firstName;
+    private String lastName;
+    private String email;
 }

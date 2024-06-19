@@ -1,7 +1,7 @@
 package SpringBoot.Library.dto.user;
 
-public record UserGetDto(
-        Long id,
+public record UserPutDto(
+
         String userName,
         String firstName,
         String lastName,
