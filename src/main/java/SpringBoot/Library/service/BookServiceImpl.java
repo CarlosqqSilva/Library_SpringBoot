@@ -3,6 +3,7 @@ package SpringBoot.Library.service;
 import SpringBoot.Library.converter.BookConverter;
 import SpringBoot.Library.dto.book.BookGetDto;
 import SpringBoot.Library.dto.book.BookPostDto;
+import SpringBoot.Library.dto.book.BookPutDto;
 import SpringBoot.Library.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -33,6 +34,10 @@ public class BookServiceImpl implements BookService {
 
     public BookPostDto saveBook(BookPostDto bookPostDto) {
         return BookConverter.fromModelToBookPostDto(bookRepository.save(BookConverter.fromBookDtoToModel(bookPostDto)));
+    }
+
+    public BookPutDto updateBook(Long id, BookPutDto bookPutDto) {
+        return BookConverter.fromModelToBookPutDto(bookRepository.save(BookConverter.fromBookPutDtoToModel(id, bookPutDto)));
     }
 
     public void deleteBookById(Long id) {

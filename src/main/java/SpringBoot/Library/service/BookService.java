@@ -2,6 +2,7 @@ package SpringBoot.Library.service;
 
 import SpringBoot.Library.dto.book.BookGetDto;
 import SpringBoot.Library.dto.book.BookPostDto;
+import SpringBoot.Library.dto.book.BookPutDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public interface BookService {
     BookGetDto getBookById(Long id);
 
     BookPostDto saveBook(BookPostDto bookPostDto);
+
+    BookPutDto updateBook(Long id, BookPutDto bookPutDto);
 
     void deleteBookById(Long id);
 }

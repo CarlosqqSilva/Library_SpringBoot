@@ -2,7 +2,7 @@ package SpringBoot.Library.dto.book;
 
 import java.io.Serializable;
 
-public record BookPatchDto(
+public record BookPutDto(
 
         String title,
         String author,
