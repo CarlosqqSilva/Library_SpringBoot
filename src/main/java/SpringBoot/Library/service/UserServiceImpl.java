@@ -3,6 +3,7 @@ package SpringBoot.Library.service;
 import SpringBoot.Library.converter.UserConverter;
 import SpringBoot.Library.dto.user.UserGetDto;
 import SpringBoot.Library.dto.user.UserPostDto;
+import SpringBoot.Library.dto.user.UserPutDto;
 import SpringBoot.Library.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,10 @@ public class UserServiceImpl implements UserService {
 
     public UserPostDto saveUser(UserPostDto userPostDto) {
         return UserConverter.fromModelToUserPostDto(userRepository.save(UserConverter.fromUserDtoToModel(userPostDto)));
+    }
+
+    public UserPutDto updateUser(Long id, UserPutDto userPutDto) {
+        return UserConverter.fromModelToUserPutDto(userRepository.save(UserConverter.fromUserPutDtoToModel(id, userPutDto)));
     }
 
     public void deleteUserById(Long id) {

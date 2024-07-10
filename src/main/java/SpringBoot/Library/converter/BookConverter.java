@@ -2,6 +2,7 @@ package SpringBoot.Library.converter;
 
 import SpringBoot.Library.dto.book.BookGetDto;
 import SpringBoot.Library.dto.book.BookPostDto;
+import SpringBoot.Library.dto.book.BookPutDto;
 import SpringBoot.Library.model.Book;
 
 public class BookConverter {
@@ -9,6 +10,7 @@ public class BookConverter {
     public static BookGetDto fromModelToBookDto(Book book) {
         return new BookGetDto(
 
+                book.getId(),
                 book.getTitle(),
                 book.getAuthor(),
                 book.getNumberOfPages());
@@ -16,6 +18,14 @@ public class BookConverter {
 
     public static BookPostDto fromModelToBookPostDto(Book book) {
         return new BookPostDto(
+
+                book.getTitle(),
+                book.getAuthor(),
+                book.getNumberOfPages());
+    }
+
+    public static BookPutDto fromModelToBookPutDto(Book book) {
+        return new BookPutDto(
 
                 book.getTitle(),
                 book.getAuthor(),
@@ -40,6 +50,15 @@ public class BookConverter {
                 .title(bookGetDto.title())
                 .author(bookGetDto.author())
                 .numberOfPages(bookGetDto.numberOfPages())
+                .build();
+    }
+
+    public static Book fromBookPutDtoToModel(Long id, BookPutDto bookPutDto) {
+        return Book.builder()
+                .id(id)
+                .title(bookPutDto.title())
+                .author(bookPutDto.author())
+                .numberOfPages(bookPutDto.numberOfPages())
                 .build();
     }
 
