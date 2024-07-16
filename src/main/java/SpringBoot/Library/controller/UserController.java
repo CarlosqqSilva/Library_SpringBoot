@@ -1,6 +1,7 @@
 package SpringBoot.Library.controller;
 
 import SpringBoot.Library.dto.user.UserGetDto;
+import SpringBoot.Library.dto.user.UserPatchDto;
 import SpringBoot.Library.dto.user.UserPostDto;
 import SpringBoot.Library.dto.user.UserPutDto;
 import SpringBoot.Library.service.UserServiceImpl;
@@ -39,6 +40,11 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<UserPutDto> updateUser(@PathVariable Long id, @RequestBody UserPutDto userPutDto) {
         return ResponseEntity.ok(userService.updateUser(id, userPutDto));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserPatchDto> patchUser(@PathVariable Long id, @RequestBody UserPatchDto userPatchDto) {
+        return ResponseEntity.ok(userService.patchUser(id, userPatchDto));
     }
 
     @DeleteMapping("/{id}")

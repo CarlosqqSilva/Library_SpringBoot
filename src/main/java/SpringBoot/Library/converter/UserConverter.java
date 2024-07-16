@@ -1,6 +1,7 @@
 package SpringBoot.Library.converter;
 
 import SpringBoot.Library.dto.user.UserGetDto;
+import SpringBoot.Library.dto.user.UserPatchDto;
 import SpringBoot.Library.dto.user.UserPostDto;
 import SpringBoot.Library.dto.user.UserPutDto;
 import SpringBoot.Library.model.User;
@@ -26,6 +27,14 @@ public class UserConverter {
 
     public static UserPutDto fromModelToUserPutDto(User user) {
         return new UserPutDto(
+                user.getUserName(),
+                user.getFirstName(),
+                user.getLastName(),
+                user.getEmail());
+    }
+
+    public static UserPatchDto fromModelToUserPatchDto(User user) {
+        return new UserPatchDto(
                 user.getUserName(),
                 user.getFirstName(),
                 user.getLastName(),
