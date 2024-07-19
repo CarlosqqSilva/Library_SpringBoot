@@ -46,7 +46,6 @@ public class UserServiceImpl implements UserService {
         }
         User userToUpdate = userOptional.get();
 
-        // Update userName if new userName is not null, not empty, and different from the current userName
         if (userPatchDto.userName() != null && !userPatchDto.userName().isEmpty() && !userPatchDto.userName().equals(userToUpdate.getUserName())) {
             userToUpdate.setUserName(userPatchDto.userName());
         }
