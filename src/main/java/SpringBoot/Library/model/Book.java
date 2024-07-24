@@ -1,10 +1,7 @@
 package SpringBoot.Library.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -14,19 +11,18 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @Builder
 public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NotBlank(message = "Must have a title")
     private String title;
-
     @NotBlank(message = "Must have an author")
     private String author;
-
-    private double numberOfPages;
+    @NotBlank(message = "Must have a number of pages")
+    private Integer numberOfPages;
 
 }
