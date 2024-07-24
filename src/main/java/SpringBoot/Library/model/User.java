@@ -20,7 +20,10 @@ public class User {
 
     @NotBlank(message = "Must have a name")
     private String userName;
+    @NotBlank(message = "Must have a first name")
     private String firstName;
+    @NotBlank(message = "Must have a last name")
     private String lastName;
+    @NotBlank(message = "Must have an email")
     private String email;
 }

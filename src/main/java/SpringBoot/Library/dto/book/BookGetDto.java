@@ -6,7 +6,7 @@ public record BookGetDto(
         Long id,
         String title,
         String author,
-        double numberOfPages
+        Integer numberOfPages
 
 ) implements Serializable {
 }

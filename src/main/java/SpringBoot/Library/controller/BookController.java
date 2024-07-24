@@ -1,6 +1,7 @@
 package SpringBoot.Library.controller;
 
 import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPatchDto;
 import SpringBoot.Library.dto.book.BookPostDto;
 import SpringBoot.Library.dto.book.BookPutDto;
 import SpringBoot.Library.service.BookService;
@@ -39,6 +40,11 @@ public class BookController {
     @PutMapping("/{id}")
     public ResponseEntity<BookPutDto> updateBook(@PathVariable Long id, @RequestBody BookPutDto bookPutDto) {
         return ResponseEntity.ok(bookService.updateBook(id, bookPutDto));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<BookPatchDto> patchBook(@PathVariable Long id, @RequestBody BookPatchDto bookPatchDto) {
+        return ResponseEntity.ok(bookService.patchBook(id, bookPatchDto));
     }
 
     @DeleteMapping("/{id}")

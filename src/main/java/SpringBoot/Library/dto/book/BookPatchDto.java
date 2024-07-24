@@ -1,14 +1,8 @@
 package SpringBoot.Library.dto.book;
 
-import java.io.Serializable;
-
-public record BookPutDto(
-
+public record BookPatchDto(
         String title,
         String author,
         Integer numberOfPages
-
-) implements Serializable {
+) {
 }
-
-

@@ -8,7 +8,7 @@ public record BookPostDto(
 
         String author,
 
-        Double numberOfPages
+        Integer numberOfPages
 
 ) implements Serializable {
 }

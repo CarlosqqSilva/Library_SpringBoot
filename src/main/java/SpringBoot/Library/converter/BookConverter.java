@@ -1,6 +1,7 @@
 package SpringBoot.Library.converter;
 
 import SpringBoot.Library.dto.book.BookGetDto;
+import SpringBoot.Library.dto.book.BookPatchDto;
 import SpringBoot.Library.dto.book.BookPostDto;
 import SpringBoot.Library.dto.book.BookPutDto;
 import SpringBoot.Library.model.Book;
@@ -32,9 +33,16 @@ public class BookConverter {
                 book.getNumberOfPages());
     }
 
+    public static BookPatchDto fromModelToBookPatchDto(Book save) {
+        return new BookPatchDto(
+                save.getTitle(),
+                save.getAuthor(),
+                save.getNumberOfPages());
+    }
+
 
     public static Book fromBookDtoToModel(BookPostDto bookPostDto) {
-        Double numberOfPages = bookPostDto.numberOfPages();
+        Integer numberOfPages = bookPostDto.numberOfPages();
         if (numberOfPages == null) {
             throw new IllegalArgumentException("Number of pages cannot be null");
         }
@@ -61,5 +69,4 @@ public class BookConverter {
                 .numberOfPages(bookPutDto.numberOfPages())
                 .build();
     }
-
 }
